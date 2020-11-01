@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>
+        ADD NOTE
+    </mat-card-title>
+    <mat-card-content>
+        <form class="example-form" #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <input matInput required placeholder="Note Topic" name="note_topic" [(ngModel)]="noteModel.noteTopic">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width">
+                  <input matInput [matDatepicker]="picker" placeholder="Note Date" name="note_date" [(ngModel)]="noteModel.noteDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field></td>
+            </tr></table>
+            <p>
+              <mat-form-field class="example-full-width">
+                <textarea rows="5" matInput required placeholder="Note" name="note" [(ngModel)]="noteModel.note"></textarea>
+              </mat-form-field>
+            </p>
+            <button type="submit" color="primary" mat-raised-button>Submit</button>
+          </form>
+    </mat-card-content>
+</mat-card>
